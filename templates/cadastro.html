@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static', filename = 'cadastro.css')}}">
+    <!-- <link rel="stylesheet" href="/static/cadastro.css"> -->
     
-    <title>Cadasto</title>
+    <title>Cadastro</title>
 </head>
 <body>
     <div class="cadastro">
@@ -18,11 +19,18 @@
             </div>
         </div>
        
-
-            <!-- {% if erro %}
-                <p class="erro">{{ erro }}</p>
-            {% endif %} -->
-        <form action="/" method="POST">
+        <!-- Exibe as mensagens de erro ou sucesso -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul>
+                    {% for category, message in messages %}
+                        <li class="alert {{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+        
+        <form action="/cadastrar" method="POST">
             <h2>Cadastro</h2>
             <div class="text">
                 <label for="username">Nome Completo</label>
@@ -30,23 +38,25 @@
             </div>
 
             <div class="text">
-                <label for="username">Email</label>
+                <label for="email">Email</label>
                 <input type="email" name="email" id="email" required>
             </div>
 
             <div class="text">
                 <label for="password">Senha</label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="senha" id="password" required>
             </div>
 
             <div class="text">
                 <label for="password">Confirme sua senha</label>
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="conPassword" id="conPassword" required>
             </div>
 
-            <button type="submit">Entrar</button>
+            <button type="submit">Cadastrar</button>
+
+
             <div class="conta">
-                <p class="c_conta">não tem uma conta?</p><a class="link_cadastro" href="#">Cadastre-se aqui</a>
+                <p class="c_conta">já tem uma conta?</p><a class="link_cadastro" href="{{url_for('home')}}">faça seu login</a>
             </div>
         </form>
     </div>

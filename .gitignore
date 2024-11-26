@@ -1,0 +1,13 @@
+# Ignorar ambiente virtual
+venv/
+ENV/
+.env
+# Ignorar arquivos de cache do Python
+__pycache__/
+*.pyc
+# Ignorar arquivos de banco de dados
+*.db
+# Ignorar arquivos de configuração de IDE
+.idea/
+.vscode/
+db_organize.sql

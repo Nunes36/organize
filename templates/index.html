@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}">
+    <!-- <link rel="stylesheet" href="login.css"> -->
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <figure>
+                <img src="{{url_for('static', filename = 'img-esco/logo.png')}}" alt="Logo da aplicação">
+            </figure>
+            <div class="desc">
+                <p class="desc_logo">"Organize, colabore e conquiste seus objetivos juntos!"</p>
+            </div>
+        </div>
+        <div class="login-form">
+            <form action="/" method="POST">
+                <h2>Login</h2>
+                <p>Bem vindo de volta! Por favor, insira suas credenciais para acessar sua conta.</p>
+                <div class="text">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <div class="text">
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+                <p><a href="{{url_for('forgot')}}">Esqueceu a senha?</a></p>
+                <button type="submit" name="submit">Entrar</button>
+                <div class="conta">
+                    <p class="c_conta">É novo por aqui? <a href="{{url_for('cadastrar')}}">Cadastre-se</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
