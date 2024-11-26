@@ -12,7 +12,7 @@
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #f1f1f1;
 }
 
 .cadastro {
@@ -30,7 +30,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    width: 400px;
+    width: 420px;
     height: 500px;
     padding: 20px;
     border-radius: 20px;
@@ -95,6 +95,7 @@ button {
     border-radius: 5px;
     font-family: var(--fonte-principal);
     font-size: 15px;
+    cursor: pointer;
 }
 
 .conta {
