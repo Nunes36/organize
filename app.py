@@ -5,7 +5,7 @@ from werkzeug.security import generate_password_hash
 
 pymysql.install_as_MySQLdb()
 
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__, template_folder='templates', static_url_path = '/static', static_folder = 'static')
 
 app.secret_key = 'organize'
 
@@ -82,9 +82,15 @@ def home():
 def forgot():
     return render_template('esqueci_senha.html')
 
-#inicia o servidor 
-if __name__ == '__main__':
+
     #criação de tabelas
-    with app.app_context():
-        db.create_all() #cria as tabelas no banco de dados 
+    #with app.app_context():
+try:
+    db.create_all() #cria as tabelas no banco de dados 
+    print("Tabelas criadas com sucesso!")
+except Exception as e:
+    print(f"Ocorreu um erro: {e}")
+    
+    #inicia o servidor 
+if __name__ == '__main__':
     app.run(debug=True)
