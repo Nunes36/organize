@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}">
-    <!-- <link rel="stylesheet" href="login.css"> -->
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename = 'login.css')}}"> -->
+    <link rel="stylesheet" href="../static/login.css">
     <title>Login</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="login-form">
-            <form action="/" method="POST">
+            <form action="/index" method="POST">
                 <h2>Login</h2>
                 <p>Bem vindo de volta! Por favor, insira suas credenciais para acessar sua conta.</p>
                 <div class="text">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="text">
                     <label for="password">Senha</label>
-                    <input type="password" name="password" id="password" required>
+                    <input type="password" name="senha" id="senha" required>
                 </div>
                 <p><a href="{{url_for('forgot')}}">Esqueceu a senha?</a></p>
                 <button type="submit" name="submit">Entrar</button>
