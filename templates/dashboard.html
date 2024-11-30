@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../static/app.css">
     <title>Organize</title>
 </head>
 <body>
-    <h1>Teste entrar no app</h1>
+    <header class="cabecalho">
+        <figure>
+            <img src="{{url_for('static', filename = 'img-esco/logo.png')}}"
+            class="img-logo" alt="imagem logo">
+        </figure>
+        <nav class="icones">
+            <ul class="font-icon">
+                <li><i class="fa-solid fa-bell"></i></li>
+                <li><i class="fa-solid fa-plus"></i></li>
+                <li><i class="fa-solid fa-right-from-bracket" name="logout" id="logout"></i></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <script src="../static/colunas.js"></script>
 </body>
 </html>
