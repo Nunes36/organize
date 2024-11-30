@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 import pymysql
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash
@@ -53,7 +53,7 @@ def cadastrar():
         senha = request.form['senha']
         conSenha = request.form['conPassword']
 
-    #verifica se senha coecidem
+        #verifica se senha coecidem
 
         if senha != conSenha:
             flash('As senhas não coecidem!', 'error')
@@ -111,6 +111,7 @@ def dashboard():
 @login_required
 def logout():
     logout_user()
+    session.clear()
     flash('Você saiu da sua conta', 'info')
     return redirect(url_for('login'))
 

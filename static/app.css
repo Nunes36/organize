@@ -1,0 +1,35 @@
+@import url('/static/cadastro.css');
+
+.cabecalho {
+    background-color: var(--fundo-azul);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+} 
+
+
+.img-logo {
+    object-fit: contain;
+    width: 70px;
+    height: 70px;
+}
+
+.icones {
+    width: 300px;
+}
+
+.font-icon {
+    display: flex;
+    justify-content: space-around;
+}
+
+.fa-solid {
+    font-size: 30px;
+    color: #f1f1f1;
+}
+
+.fa-solid:hover {
+    cursor: pointer;
+}
+
