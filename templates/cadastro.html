@@ -12,23 +12,25 @@
     <div class="cadastro">
         <div class="logo">
             <figure>
-                <img src="{{url_for('static', filename = 'img-esco/logo.png')}}" alt="imagem logo">
+                <img src="../static/img-esco/logo.png" alt="imagem logo">
             </figure>
             <div class="desc">
                 <p class="desc_logo">"Organize, colabore e conquiste seus objetivos juntos!"</p>
             </div>
         </div>
        
-        <!-- Exibe as mensagens de erro ou sucesso -->
+        <div class="mensagem_erro">
+            <!-- Exibe as mensagens de erro ou sucesso -->
         {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-                <ul>
-                    {% for category, message in messages %}
-                        <li class="alert {{ category }}">{{ message }}</li>
-                    {% endfor %}
-                </ul>
-            {% endif %}
-        {% endwith %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="alert {{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+        </div>
         
         <form action="/cadastrar" method="POST">
             <h2>Cadastro</h2>
@@ -56,7 +58,7 @@
 
 
             <div class="conta">
-                <p class="c_conta">já tem uma conta?</p><a class="link_cadastro" href="{{url_for('home')}}">faça seu login</a>
+                <p class="c_conta">já tem uma conta?</p><a class="link_cadastro" href="../templates/index.html">faça seu login</a>
             </div>
         </form>
     </div>
