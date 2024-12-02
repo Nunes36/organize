@@ -3,6 +3,8 @@
 :root {
     --fonte-principal: "Poppins", sans-serif;
     --fundo-azul: #000041;
+    --fundo-columnas:#adb4c1;
+    --cor-fonte:#182b4d;
 }
 
 *{
@@ -16,6 +18,10 @@ body {
     background-color: #f1f1f1;
 }
 
+
+.mensagem_erro {
+    display: none;
+}
 .cadastro {
     display: flex;
     width: 800px;
@@ -86,6 +92,7 @@ form {
 h2 {
     font-family: var(--fonte-principal);
     font-weight: 700;
+    color: var(--cor-fonte);
 }
 
 button {

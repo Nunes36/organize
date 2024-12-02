@@ -11,7 +11,7 @@
     <div class="container">
         <div class="logo">
             <figure>
-                <img src="{{url_for('static', filename = 'img-esco/logo.png')}}" alt="Logo da aplicação">
+                <img src="../static/img-esco/logo.png" alt="Logo da aplicação">
             </figure>
             <div class="desc">
                 <p class="desc_logo">"Organize, colabore e conquiste seus objetivos juntos!"</p>
@@ -29,10 +29,10 @@
                     <label for="password">Senha</label>
                     <input type="password" name="senha" id="senha" required>
                 </div>
-                <p><a href="{{url_for('forgot')}}">Esqueceu a senha?</a></p>
-                <button type="submit" name="submit">Entrar</button>
+                <p><a href="../templates/esqueci_senha.html">Esqueceu a senha?</a></p>
+                <a href="../templates/dashboard.html"><button type="submit" name="submit">Entrar</button></a>
                 <div class="conta">
-                    <p class="c_conta">É novo por aqui? <a href="{{url_for('cadastrar')}}">Cadastre-se</a></p>
+                    <p class="c_conta">É novo por aqui? <a href="../templates/cadastro.html">Cadastre-se</a></p>
                 </div>
             </form>
         </div>
