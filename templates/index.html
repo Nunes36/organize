@@ -30,13 +30,15 @@
                     <input type="password" name="senha" id="senha" required>
                 </div>
                 <p><a href="{{url_for('forgot')}}">Esqueceu a senha?</a></p>
-                <a href="{{url_for('dashboard')}}"><button type="submit" name="submit">Entrar</button></a>
+                <button type="submit" name="submit">Entrar</button>
                 <div class="conta">
                     <p class="c_conta">É novo por aqui? <a href="{{url_for('cadastro')}}">Cadastre-se</a></p>
                 </div>
             </form>
         </div>
     </div>
+
+    <script src="../static/js/req.js"></script>
 </body>
 </html>
 
