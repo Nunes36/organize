@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
+from flask_cors import CORS
 import pymysql
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash
@@ -9,6 +10,7 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 pymysql.install_as_MySQLdb()
 
 app = Flask(__name__, template_folder='templates', static_url_path = '/static', static_folder = 'static')
+CORS(app)
 
 app.secret_key = 'organize' #chave de acesso
 
@@ -125,6 +127,12 @@ def home():
 def forgot():
     return render_template('esqueci_senha.html')
 
+
+# rota back-end
+@app.route('/organize', methods = ['GET'])
+def organize():
+    data = { "Message:","Essa é a mensagem do servidor!" }
+    return jsonify(data)
 
     #criação de tabelas
     #with app.app_context():
