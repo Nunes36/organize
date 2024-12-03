@@ -101,9 +101,11 @@ def login():
     return render_template('index.html')
 
 #página dashboard (após o login)
-@app.route('/dashboard')
+@app.route('/dashboard', methods = ['POST', 'GET'])
 @login_required
 def dashboard():
+    if request.method == 'POST':
+        return render_template('index.html')
     return render_template('dashboard.html', nome = current_user.nome_completo)
 
 #logout
